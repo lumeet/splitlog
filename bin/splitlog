@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+lib = File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'splitlog/server'
+
+filename = File.absolute_path(ARGV[0])
+regexp = Regexp.new(ARGV[1])
+Splitlog::Server.instance.start(filename, regexp)

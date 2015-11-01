@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script>
+function initWebSocket() {
+  var colors = ['#ffc', '#fcf', '#fcc', '#cff', '#cfc', '#ccf', '#ccc'];
+  var ws = new WebSocket('ws://localhost:3333/websocket');
+  ws.onmessage = function(event) {
+    var data = JSON.parse(event.data);
+    var el = document.createElement('div');
+    el.appendChild(document.createTextNode(data.text));
+    if (data.group) {
+      el.style.backgroundColor = colors[data.group];
+    }
+    document.body.appendChild(el);
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+};
+</script>
+<body onload="initWebSocket()">
+</body>
+</html>
