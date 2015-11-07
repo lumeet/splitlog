@@ -1,0 +1,29 @@
+{
+  "name": "splitlog",
+  "version": "0.0.0",
+  "description": "",
+  "main": "Brocfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "broccoli": "^0.16.8",
+    "broccoli-babel-transpiler": "^5.4.5",
+    "broccoli-webpack": "^0.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "install": "rm -rf static/js && broccoli build static/js/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumeet/splitlog.git"
+  },
+  "author": "Teemu <teemu@aikais.in>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lumeet/splitlog/issues"
+  },
+  "homepage": "https://github.com/lumeet/splitlog#readme"
+}

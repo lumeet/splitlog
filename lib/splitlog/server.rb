@@ -24,7 +24,15 @@ module Splitlog #:nodoc:
             @monitor.kill
           end
         else
-          ['200', { 'Content-Type' => 'text/html' }, [File.read('./static/index.html')]]
+          case env['PATH_INFO']
+          when '/'
+            ['200', { 'Content-Type' => 'text/html' }, [File.read('./static/index.html')]]
+          when %r{^/static/js/}
+            ['200', { 'Content-Type' => 'application/javascript' },
+             [File.read(File.join('.', env['PATH_INFO']))]]
+          else
+            ['404', { 'Content-Type' => 'text/html' }, []]
+          end
         end
       end
 
