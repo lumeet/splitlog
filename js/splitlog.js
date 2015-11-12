@@ -1,3 +1,4 @@
-import ws from './websocket'
+import reporter from './reporter';
+import ws from './websocket';
 
-ws();
+ws(reporter);

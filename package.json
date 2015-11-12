@@ -11,7 +11,9 @@
     "broccoli-babel-transpiler": "^5.4.5",
     "broccoli-webpack": "^0.1.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jquery": "^2.1.4"
+  },
   "scripts": {
     "install": "rm -rf static/js && broccoli build static/js/",
     "test": "echo \"Error: no test specified\" && exit 1"
