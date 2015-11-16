@@ -5,8 +5,8 @@ module.exports = function(config) {
       require('karma-phantomjs-launcher')
     ],
 
-    basePath: 'static/js',
-    frameworks: [ 'tap' ],
+    basePath: 'static',
+    frameworks: ['tap'],
     files: ['test.js'],
 
     reporters: ['dots'],

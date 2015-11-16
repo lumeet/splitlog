@@ -1,2 +1,4 @@
 Gemfile.lock
+/tmp
 /node_modules
+/static/test.js

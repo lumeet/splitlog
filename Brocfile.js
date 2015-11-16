@@ -1,7 +1,12 @@
 const babel       = require('broccoli-babel-transpiler');
+const funnel      = require('broccoli-funnel');
 const webpack     = require('broccoli-webpack');
 const merge_trees = require('broccoli-merge-trees');
 const glob        = require('glob');
+
+const indexFile = funnel('js', {
+  include: ['index.html']
+});
 
 const libFiles = babel('js/lib', {
   stage: 0,
@@ -15,7 +20,7 @@ const testFiles = babel('js/', {
 
 const lib = webpack(libFiles, {
   entry: './splitlog.js',
-  output: { filename: 'splitlog.js' }
+  output: { filename: 'js/splitlog.js' }
 });
 
 const test = webpack(testFiles, {
@@ -25,4 +30,4 @@ const test = webpack(testFiles, {
   node: { fs: 'empty' },
 });
 
-module.exports = merge_trees([lib, test]);
+module.exports = merge_trees([lib, test, indexFile]);

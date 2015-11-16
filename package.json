@@ -22,7 +22,7 @@
     "tape": "^4.2.2"
   },
   "scripts": {
-    "install": "rm -rf static/js && broccoli build static/js/",
+    "install": "rm -rf static && broccoli build static",
     "test": "node_modules/eslint/bin/eslint.js js/; node_modules/karma/bin/karma start"
   },
   "repository": {
