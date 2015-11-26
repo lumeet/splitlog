@@ -5,7 +5,7 @@ const mergeTrees = require('broccoli-merge-trees');
 const glob       = require('glob');
 
 const indexFile = funnel('js', {
-  include: ['index.html']
+  include: ['index.html', 'splitlog.css']
 });
 
 const libFiles = babel('js/lib', {

@@ -1,0 +1,26 @@
+body {
+  background: #000;
+  color: #fff;
+}
+
+.line {
+  display: table-row;
+}
+
+.boxes {
+  display: table-cell;
+}
+
+.boxes .box {
+  position: relative;
+  display: inline-block;
+  border: solid 1px #555;
+  width: 14px;
+  height: 14px;
+  margin: 1px 0;
+}
+
+.line span {
+  display: table-cell;
+  padding-left: 4px;
+}

@@ -30,6 +30,9 @@ module Splitlog #:nodoc:
           when %r{^/js/}
             ['200', { 'Content-Type' => 'application/javascript' },
              [File.read(File.join('static', env['PATH_INFO']))]]
+          when %r{^\.css}
+            ['200', { 'Content-Type' => 'text/css' },
+             [File.read(File.join('static', env['PATH_INFO']))]]
           else
             ['404', { 'Content-Type' => 'text/html' }, []]
           end
