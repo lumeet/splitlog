@@ -29,13 +29,13 @@ let colors = [];
 
 export default function(event) {
   const data = parseData(event);
+  if (!data.group) { return; }
+
   const $line = $('<div class="line"><div class="boxes"><div class="box"></div></div></div>');
   const $box = $line.find('.box');
 
-  if (data.group) {
-    $box.css('background-color', colorize(data.group));
-    $box.css('margin-left', leftPosition(data.group));
-  }
+  $box.css('background-color', colorize(data.group));
+  $box.css('margin-left', leftPosition(data.group));
   $('body').append($line);
   $('<span></span>').text(data.text).appendTo($line);
 
