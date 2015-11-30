@@ -117,13 +117,15 @@
 
 	  module.exports = function (event) {
 	    var data = parseData(event);
+	    if (!data.group) {
+	      return;
+	    }
+
 	    var $line = (0, _$['default'])('<div class="line"><div class="boxes"><div class="box"></div></div></div>');
 	    var $box = $line.find('.box');
 
-	    if (data.group) {
-	      $box.css('background-color', colorize(data.group));
-	      $box.css('margin-left', leftPosition(data.group));
-	    }
+	    $box.css('background-color', colorize(data.group));
+	    $box.css('margin-left', leftPosition(data.group));
 	    (0, _$['default'])('body').append($line);
 	    (0, _$['default'])('<span></span>').text(data.text).appendTo($line);
 

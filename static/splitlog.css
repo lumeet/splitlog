@@ -1,6 +1,8 @@
 body {
   background: #000;
   color: #fff;
+  font-size: 12px;
+  font-family: courier sans-serif;
 }
 
 .line {
@@ -15,8 +17,8 @@ body {
   position: relative;
   display: inline-block;
   border: solid 1px #555;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin: 1px 0;
 }
 
